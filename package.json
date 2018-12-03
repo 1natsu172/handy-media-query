@@ -2,11 +2,55 @@
   "name": "@1natsu/lazy-media-query",
   "version": "1.0.0",
   "description": "better media-query for... (e.g. styled-components)",
-  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "1natsu",
+  "contributors": [
+    "1natsu"
+  ],
   "license": "MIT",
   "private": false,
+  "bugs": {
+    "url": "https://github.com/1natsu172/lazy-media-query/issues",
+    "email": "1natsu172@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1natsu172/lazy-media-query"
+  },
+  "files": [
+    "dist"
+  ],
+  "typings": "dist/types/index.d.ts",
+  "module": "dist/es/index.js",
+  "main": "dist/cjs/index.js",
+  "homepage": "https://github.com/1natsu172/lazy-media-query",
+  "engines": {
+    "node": ">=9"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead"
+  ],
+  "scripts": {
+    "test": "foo",
+    "clean": "shx rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "npm run build:esnext && npm run build:esm && npm run build:cjs",
+    "build:esnext": "tsc --module esnext --target esnext --outDir dist/es",
+    "build:esm": "tsc --module esnext --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs"
+  },
   "devDependencies": {
     "typescript": "^3.2.1"
-  }
+  },
+  "keywords": [
+    "css",
+    "jsx",
+    "media-query",
+    "emotion",
+    "styled-components",
+    "css-in-js"
+  ]
 }
