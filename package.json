@@ -1,0 +1,9 @@
+{
+  "name": "@1natsu/lazy-media-query",
+  "version": "1.0.0",
+  "description": "better media-query for... (e.g. styled-components)",
+  "main": "dist/index.js",
+  "author": "1natsu",
+  "license": "MIT",
+  "private": false
+}
