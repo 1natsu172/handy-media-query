@@ -68,4 +68,5 @@ typings/
 # Serverless directories
 .serverless
 
-
+# Additional
+memo.md
