@@ -2,7 +2,11 @@ import { Unit } from '../types'
 
 const isPx = (value: string): boolean => String(value).includes('px')
 
-const pxToRelativeUnit = (value: string | number, ratio = 16, unit: Unit) => {
+const pxToRelativeUnit = (
+  value: string | number,
+  ratio = 16,
+  unit: Exclude<Unit, 'px'>
+) => {
   let val = value
 
   if (typeof val === 'string') {
