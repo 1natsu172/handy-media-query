@@ -7,15 +7,10 @@
     "outDir": "./dist",
     "moduleResolution": "node",
     "sourceMap": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "alwaysStrict": true,
-    "noImplicitAny": true,
+    "strict": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true
   },
   "include": [
     "src/**/*"
