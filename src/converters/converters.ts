@@ -25,3 +25,5 @@ export const pxToEm = (value: string | number, ratio = 16) =>
 
 export const pxToRem = (value: string | number, ratio = 16) =>
   pxToRelativeUnit(value, ratio, 'rem')
+
+export const pxToString = (value: number) => `${value}px`

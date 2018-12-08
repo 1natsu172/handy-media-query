@@ -1,1 +1,1 @@
-export { pxToEm, pxToRem } from './converters'
+export { pxToEm, pxToRem, pxToString } from './converters'
