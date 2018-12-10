@@ -1,1 +1,1 @@
-# @1natsu/lazy-media-query
+# @1natsu/handy-media-query
