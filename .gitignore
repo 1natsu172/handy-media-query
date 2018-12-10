@@ -71,3 +71,4 @@ typings/
 # Additional
 memo.md
 dist
+.vscode
