@@ -1,5 +1,6 @@
 import { Unit, MediaType } from './types'
 import { pxToEm, pxToRem, pxToString } from './converters'
+import { hasDuplicateProps } from './conditionals'
 
 /**
  * @description Point is "px" based string or number
@@ -71,6 +72,11 @@ const generateMediaQuery = <T = { [key: string]: any }>(
   userSelfMq: UserSelfMq<T>
 ) => {
   const mqMethods = mq()
+
+  if (hasDuplicateProps(userSelfMq, mqMethods)) {
+    throw new Error('Duplicate property name with library method.')
+  }
+
   return { ...userSelfMq, ...mqMethods }
 }
 
