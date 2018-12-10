@@ -1,9 +1,14 @@
 import { Unit, MediaType } from './types'
 import { pxToEm, pxToRem, pxToString } from './converters'
 
+/**
+ * @description Point is "px" based string or number
+ * @example '768px' | 768
+ */
 type Point = string | number
+
 type UserSelfMq<T> = T
-type DefaultOpts = typeof defaultOpts
+type Opts = typeof defaultOpts
 
 const defaultOpts = {
   unit: 'em' as Unit,
@@ -25,28 +30,35 @@ const convertPoint = (point: Point, unit: Unit, ratio = 16): string => {
 }
 
 const mq = () => {
-  const min = (
-    point: Point,
-    { mediaType, unit, unitRatio }: DefaultOpts = defaultOpts
-  ) =>
-    `@media ${mediaType} (min-width: ${convertPoint(point, unit, unitRatio)})`
-
-  const max = (
-    point: Point,
-    { mediaType, unit, unitRatio }: DefaultOpts = defaultOpts
-  ) =>
-    `@media ${mediaType} (max-width: ${convertPoint(point, unit, unitRatio)})`
+  const min = (point: Point, opts: Opts = defaultOpts) => {
+    const { mediaType, unit, unitRatio } = opts
+    return `@media ${mediaType} (min-width: ${convertPoint(
+      point,
+      unit,
+      unitRatio
+    )})`
+  }
+  const max = (point: Point, opts: Opts = defaultOpts) => {
+    const { mediaType, unit, unitRatio } = opts
+    return `@media ${mediaType} (max-width: ${convertPoint(
+      point,
+      unit,
+      unitRatio
+    )})`
+  }
 
   const between = (
     minPoint: Point,
     maxPoint: Point,
-    { mediaType, unit, unitRatio }: DefaultOpts = defaultOpts
-  ) =>
-    `@media ${mediaType} (min-width: ${convertPoint(
+    opts: Opts = defaultOpts
+  ) => {
+    const { mediaType, unit, unitRatio } = opts
+    return `@media ${mediaType} (min-width: ${convertPoint(
       minPoint,
       unit,
       unitRatio
     )}) and (max-width: ${convertPoint(maxPoint, unit, unitRatio)})`
+  }
 
   return {
     min,
