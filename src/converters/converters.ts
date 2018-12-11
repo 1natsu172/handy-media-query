@@ -1,6 +1,6 @@
 import { Unit } from '../types'
 
-const isPx = (value: string): boolean => String(value).includes('px')
+export const isPx = (value: string): boolean => String(value).includes('px')
 
 const pxToRelativeUnit = (
   value: string | number,
