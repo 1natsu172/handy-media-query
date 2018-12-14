@@ -1,4 +1,4 @@
-import mq, { generateMediaQuery } from '.'
+import mq, { composeMediaQuery } from '.'
 
 describe('library methods(default exported) tests', () => {
   // generate ramdom px numbers
@@ -82,7 +82,7 @@ describe('Generate media queries', () => {
   const { ...libraryMethods } = mq
 
   test('Successful example', () => {
-    expect(JSON.stringify(generateMediaQuery(mediaQueries))).toEqual(
+    expect(JSON.stringify(composeMediaQuery(mediaQueries))).toEqual(
       JSON.stringify({
         small: mq.max(480),
         middle: mq.between(481, 767),
@@ -95,6 +95,6 @@ describe('Generate media queries', () => {
   })
 
   test('Fail if there are duplicate library properties', () => {
-    expect(() => generateMediaQuery({ ...mediaQueries, min: 'yo' })).toThrow()
+    expect(() => composeMediaQuery({ ...mediaQueries, min: 'yo' })).toThrow()
   })
 })

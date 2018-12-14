@@ -68,7 +68,7 @@ const mq = () => {
   }
 }
 
-const generateMediaQuery = <T = { [key: string]: any }>(
+const composeMediaQuery = <T = { [key: string]: any }>(
   userSelfMq: UserSelfMq<T>
 ) => {
   const mqMethods = mq()
@@ -82,4 +82,4 @@ const generateMediaQuery = <T = { [key: string]: any }>(
 
 export default mq()
 
-export { generateMediaQuery, pxToEm, pxToRem }
+export { composeMediaQuery, pxToEm, pxToRem }
