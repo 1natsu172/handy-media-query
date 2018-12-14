@@ -1,7 +1,7 @@
 {
   "name": "@1natsu/handy-media-query",
   "version": "1.0.0",
-  "description": "better media-query for... (e.g. styled-components)",
+  "description": "better media-query for... (e.g. styled-components, emotion, ...)",
   "publishConfig": {
     "access": "public"
   },
