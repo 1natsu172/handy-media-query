@@ -4,32 +4,33 @@ A handy CSS media query methods of JavaScript
 
 The opportunity to use... (e.g. styled-components, emotion, …)
 
-## Table of contents
+## 🏆 Table of contents
 
 - [@1natsu/handy-media-query](#1natsuhandy-media-query)
-  - [Table of contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-  - [Usage](#usage)
+  - [🏆 Table of contents](#%F0%9F%8F%86-table-of-contents)
+  - [✨ Getting Started](#%E2%9C%A8-getting-started)
+  - [💁 Usage](#%F0%9F%92%81-usage)
     - [Simple](#simple)
-  - [Realistic example](#realistic-example)
+  - [😌 Realistic example](#%F0%9F%98%8C-realistic-example)
     - [maybe as usufull](#maybe-as-usufull)
-  - [APIs](#apis)
+  - [🔥 APIs](#%F0%9F%94%A5-apis)
     - [Default exported object](#default-exported-object)
-      - [#min(px, [opts])](#minpx-opts)
-      - [#max(px, [opts])](#maxpx-opts)
-      - [#between(minPx, maxPx, [opts])](#betweenminpx-maxpx-opts)
+      - [`#min(px, [opts])`](#minpx-opts)
+      - [`#max(px, [opts])`](#maxpx-opts)
+      - [`#between(minPx, maxPx, [opts])`](#betweenminpx-maxpx-opts)
         - [DefaultOptions](#defaultoptions)
-    - [composeMediaQuery(userSelfMediaQuery)](#composemediaqueryuserselfmediaquery)
-    - [pxToEm(px, ratio)](#pxtoempx-ratio)
-    - [pxToRem(px, ratio)](#pxtorempx-ratio)
-  - [Running the tests](#running-the-tests)
+    - [Named exported methods](#named-exported-methods)
+      - [`composeMediaQuery(userSelfMediaQuery)`](#composemediaqueryuserselfmediaquery)
+      - [`pxToEm(value, ratio)`](#pxtoemvalue-ratio)
+      - [`pxToRem(value, ratio)`](#pxtoremvalue-ratio)
+  - [💚 Running the tests](#%F0%9F%92%9A-running-the-tests)
   - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+  - [🏷 Versioning](#%F0%9F%8F%B7-versioning)
+  - [©️ License](#%C2%A9%EF%B8%8F-license)
+  - [🙏 Acknowledgments](#%F0%9F%99%8F-acknowledgments)
     - [Inspiration](#inspiration)
 
-## Getting Started
+## ✨ Getting Started
 
 with **yarn**
 
@@ -37,7 +38,7 @@ with **yarn**
 yarn add @1natsu/handy-media-query
 ```
 
----
+or
 
 with **npm**
 
@@ -45,7 +46,7 @@ with **npm**
 npm install @1natsu/handy-media-query
 ```
 
-## Usage
+## 💁 Usage
 
 ### Simple
 
@@ -59,7 +60,7 @@ mq.min(768) // "@media all (min-width: 48em)"
 
 > By default, the passed px is converted to em.
 
-## Realistic example
+## 😌 Realistic example
 
 ### maybe as usufull
 
@@ -109,7 +110,7 @@ const StyledFoo = styled(Foo)`
 `
 ```
 
-## APIs
+## 🔥 APIs
 
 ### Default exported object
 
@@ -117,12 +118,12 @@ const StyledFoo = styled(Foo)`
 import mq from '@1natsu/handy-media-query'
 ```
 
-#### #min(px, [opts])
+#### `#min(px, [opts])`
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| min     |    ✅    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
-| options |    ➖    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
+| min     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
 mq.min(480)
@@ -132,12 +133,12 @@ mq.min(480, {unit: 'px', mediaType: 'screen'})
 // '@media screen (min-width: 480px)'
 ```
 
-#### #max(px, [opts])
+#### `#max(px, [opts])`
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| max     |    ✅    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
-| options |    ➖    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
+| max     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
 mq.max(480)
@@ -147,13 +148,13 @@ mq.max(480, {unit: 'px', mediaType: 'screen'})
 // '@media screen (max-width: 480px)'
 ```
 
-#### #between(minPx, maxPx, [opts])
+#### `#between(minPx, maxPx, [opts])`
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| min     |    ✅    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
-| max     |    ✅    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
-| options |    ➖    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
+| min     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| max     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
 mq.between(480,980)
@@ -167,14 +168,15 @@ mq.between(480, 980, {unit: 'px', mediaType: 'screen'})
 
 | name      | require |                       type                       | default | decstiption                                                                                                                  |
 | --------- | :-----: | :----------------------------------------------: | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
-| unit      |    ➖    |           `'em'` \| `'rem'` \| `'px'`            | `'em'`  | Output unit                                                                                                                  |
-| unitRatio |    ➖    |                      number                      |  `16`   | Unit ratio as a reference of `'em'` or `'rem'`                                                                               |
-| mediaType |    ➖    | `'all'` \| `'screen'` \| `'print'` \| `'speech'` | `'all'` | [MDN - Media Query#Media-Types](https://developer.mozilla.org/en/docs/Web/CSS/Media_Queries/Using_media_queries#Media_types) |
-
+| unit      |    -    |           `'em'` \| `'rem'` \| `'px'`            | `'em'`  | Output unit                                                                                                                  |
+| unitRatio |    -    |                      number                      |  `16`   | Unit ratio as a reference of `'em'` or `'rem'`                                                                               |
+| mediaType |    -    | `'all'` \| `'screen'` \| `'print'` \| `'speech'` | `'all'` | [MDN - Media Query#Media-Types](https://developer.mozilla.org/en/docs/Web/CSS/Media_Queries/Using_media_queries#Media_types) |
 
 ---
 
-### composeMediaQuery(userSelfMediaQuery)
+### Named exported methods
+
+#### `composeMediaQuery(userSelfMediaQuery)`
 
 Return a new object with `{passed argument object}` + `{media query methods}`
 
@@ -182,7 +184,7 @@ This function merges media query methods & passed with the object. _**So it's ne
 
 | name               | require |  type  | default | decstiption                             |
 | ------------------ | :-----: | :----: | :-----: | --------------------------------------- |
-| userSelfMediaQuery |    ✅    | object |    -    | Object with string media query in value |
+| userSelfMediaQuery |    ✓    | object |    -    | Object with string media query in value |
 
 
 ```javascript
@@ -215,14 +217,14 @@ const mediaQueries = {
 
 **But, assume a usage like a [Realistic example](#realistic-example)**
 
-### pxToEm(px, ratio)
+#### `pxToEm(value, ratio)`
 
 * Unit converter for px to em
 
 | name  | require |       type       | default | decstiption                                         |
 | ----- | :-----: | :--------------: | :-----: | --------------------------------------------------- |
-| value |    ✅    | string \| number |    -    | Conversion source px.<br>`"<number>px"` or `number` |
-| ratio |    ➖    |      number      |  `16`   | Unit ratio as a reference of `'em'`                 |
+| value |    ✓    | string \| number |    -    | Conversion source px.<br>`"<number>px"` or `number` |
+| ratio |    -    |      number      |  `16`   | Unit ratio as a reference of `'em'`                 |
 
 ```javascript
 import { pxToEm } from '@1natsu/handy-media-query'
@@ -231,14 +233,14 @@ const convertToEm = pxToEm(480, 10)
 console.log(convertToEm) // 48em
 ```
 
-### pxToRem(px, ratio)
+#### `pxToRem(value, ratio)`
 
 * Unit converter for px to rem
 
 | name  | require |       type       | default | decstiption                                         |
 | ----- | :-----: | :--------------: | :-----: | --------------------------------------------------- |
-| value |    ✅    | string \| number |    -    | Conversion source px.<br>`"<number>px"` or `number` |
-| ratio |    ➖    |      number      |  `16`   | Unit ratio as a reference of `'rem'`                |
+| value |    ✓    | string \| number |    -    | Conversion source px.<br>`"<number>px"` or `number` |
+| ratio |    -    |      number      |  `16`   | Unit ratio as a reference of `'rem'`                |
 
 ```javascript
 import { pxToRem } from '@1natsu/handy-media-query'
@@ -247,7 +249,7 @@ const convertToRem = pxToRem(480, 10)
 console.log(convertToRem) // 48rem
 ```
 
-## Running the tests
+## 💚 Running the tests
 
 with [Jest](https://jestjs.io/).
 
@@ -265,15 +267,15 @@ npm run test
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
 
-## Versioning
+## 🏷 Versioning
 
 Use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/1natsu172/handy-media-query/tags). 
 
-## License
+## ©️ License
 
 MIT © [1natsu172](https://github.com/1natsu172)
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 ### Inspiration
 
