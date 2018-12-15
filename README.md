@@ -1,5 +1,10 @@
 # 🧤 @1natsu/handy-media-query
 
+[![](https://img.shields.io/npm/v/@1natsu/handy-media-query.svg?style=for-the-badge&logo=npm&colorB=cc3534)](https://www.npmjs.com/package/@1natsu/handy-media-query)
+[![](https://img.shields.io/npm/types/@1natsu/handy-media-query.svg?style=for-the-badge&logo=typescript&colorB=007acc)](https://www.npmjs.com/package/@1natsu/handy-media-query)
+[![](https://img.shields.io/circleci/project/github/1natsu172/handy-media-query/master.svg?style=for-the-badge&logo=circleci&colorB=00992B)](https://circleci.com/gh/1natsu172/handy-media-query)
+
+
 **A handy CSS media query methods of JavaScript**
 
 _**Just return the media query string.**_
