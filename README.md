@@ -1,14 +1,14 @@
-# @1natsu/handy-media-query
+# 🧤 @1natsu/handy-media-query
 
 **A handy CSS media query methods of JavaScript**
 
-_**Just return the media query string.**_
+<u>_**Just return the media query string.**_</u>
 
 The opportunity to use… (e.g. styled-components, emotion, …)
 
 ## 🏆 Table of contents
 
-- [@1natsu/handy-media-query](#1natsuhandy-media-query)
+- [🧤 @1natsu/handy-media-query](#%F0%9F%A7%A4-1natsuhandy-media-query)
   - [🏆 Table of contents](#%F0%9F%8F%86-table-of-contents)
   - [✨ Getting Started](#%E2%9C%A8-getting-started)
   - [💁 Usage](#%F0%9F%92%81-usage)
