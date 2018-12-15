@@ -2,7 +2,7 @@
 
 **A handy CSS media query methods of JavaScript**
 
-<u>_**Just return the media query string.**_</u>
+_**Just return the media query string.**_
 
 The opportunity to use… (e.g. styled-components, emotion, …)
 
