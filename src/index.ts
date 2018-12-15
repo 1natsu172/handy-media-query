@@ -32,6 +32,7 @@ const convertPoint = (point: Point, unit: Unit, ratio = 16): string => {
 
 const mq = () => {
   const min = (point: Point, opts: Opts = defaultOpts) => {
+    const { mediaType, unit, unitRatio } = { ...defaultOpts, ...opts }
     return `@media ${addMediaType(mediaType)} (min-width: ${convertPoint(
       point,
       unit,
@@ -40,6 +41,7 @@ const mq = () => {
   }
 
   const max = (point: Point, opts: Opts = defaultOpts) => {
+    const { mediaType, unit, unitRatio } = { ...defaultOpts, ...opts }
     return `@media ${addMediaType(mediaType)} (max-width: ${convertPoint(
       point,
       unit,
@@ -52,6 +54,7 @@ const mq = () => {
     maxPoint: Point,
     opts: Opts = defaultOpts
   ) => {
+    const { mediaType, unit, unitRatio } = { ...defaultOpts, ...opts }
     return `@media ${addMediaType(mediaType)} (min-width: ${convertPoint(
       minPoint,
       unit,
