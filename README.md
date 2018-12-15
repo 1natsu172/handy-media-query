@@ -22,8 +22,8 @@ The opportunity to use… (e.g. styled-components, emotion, …)
     - [maybe as usufull](#maybe-as-usufull)
   - [🔥 APIs](#%F0%9F%94%A5-apis)
     - [Default exported object](#default-exported-object)
-      - [`#min(px, [opts])`](#minpx-opts)
-      - [`#max(px, [opts])`](#maxpx-opts)
+      - [`#min(minPx, [opts])`](#minminpx-opts)
+      - [`#max(maxPx, [opts])`](#maxmaxpx-opts)
       - [`#between(minPx, maxPx, [opts])`](#betweenminpx-maxpx-opts)
         - [DefaultOptions](#defaultoptions)
     - [Named exported methods](#named-exported-methods)
@@ -125,11 +125,11 @@ const StyledFoo = styled(Foo)`
 import mq from '@1natsu/handy-media-query'
 ```
 
-#### `#min(px, [opts])`
+#### `#min(minPx, [opts])`
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| min     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| minPx   |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
 | options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
@@ -140,11 +140,11 @@ mq.min(480, {unit: 'px', mediaType: 'screen'})
 // '@media screen and (min-width: 480px)'
 ```
 
-#### `#max(px, [opts])`
+#### `#max(maxPx, [opts])`
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| max     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| maxPx   |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
 | options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
@@ -159,8 +159,8 @@ mq.max(480, {unit: 'px', mediaType: 'screen'})
 
 | name    | require |       type       |              default              | decstiption                                 |
 | ------- | :-----: | :--------------: | :-------------------------------: | ------------------------------------------- |
-| min     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
-| max     |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| minPx   |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
+| maxPx   |    ✓    | string \| number |                 -                 | `"<number>px"` or `number`(assuming pixels) |
 | options |    -    |      object      | [DefaultOptions](#DefaultOptions) |                                             |
 
 ```javascript
@@ -205,7 +205,7 @@ const mediaQueries = composeMediaQuery({
 })
 ```
 
-The contents of the generated object are as follows.
+↓↓ The contents of the generated object are as follows ↓↓
 
 ```javascript
 const mediaQueries = {
