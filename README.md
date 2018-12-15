@@ -55,9 +55,9 @@ npm install @1natsu/handy-media-query
 ```javascript
 import mq from '@1natsu/handy-media-query'
 
-mq.max(480) // "@media all (max-width: 30em)"
-mq.between(481,767) // "@media all (min-width: 30.0625em) and (max-width: 47.9375em)"
-mq.min(768) // "@media all (min-width: 48em)"
+mq.max(480) // "@media all and (max-width: 30em)"
+mq.between(481,767) // "@media all and (min-width: 30.0625em) and (max-width: 47.9375em)"
+mq.min(768) // "@media all and (min-width: 48em)"
 ```
 
 > By default, the passed px is converted to em.
@@ -129,10 +129,10 @@ import mq from '@1natsu/handy-media-query'
 
 ```javascript
 mq.min(480)
-// '@media all (min-width: 30em)'
+// '@media all and (min-width: 30em)'
 
 mq.min(480, {unit: 'px', mediaType: 'screen'})
-// '@media screen (min-width: 480px)'
+// '@media screen and (min-width: 480px)'
 ```
 
 #### `#max(px, [opts])`
@@ -144,10 +144,10 @@ mq.min(480, {unit: 'px', mediaType: 'screen'})
 
 ```javascript
 mq.max(480)
-// '@media all (max-width: 30em)'
+// '@media all and (max-width: 30em)'
 
 mq.max(480, {unit: 'px', mediaType: 'screen'})
-// '@media screen (max-width: 480px)'
+// '@media screen and (max-width: 480px)'
 ```
 
 #### `#between(minPx, maxPx, [opts])`
@@ -160,10 +160,10 @@ mq.max(480, {unit: 'px', mediaType: 'screen'})
 
 ```javascript
 mq.between(480,980)
-// '@media all (min-width: 30em) and (max-width: 61.25em)'
+// '@media all and (min-width: 30em) and (max-width: 61.25em)'
 
 mq.between(480, 980, {unit: 'px', mediaType: 'screen'})
-// '@media screen (min-width: 480px) and (max-width: 61.25em)'
+// '@media screen and (min-width: 480px) and (max-width: 61.25em)'
 ```
 
 ##### DefaultOptions
