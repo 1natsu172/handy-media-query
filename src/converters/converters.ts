@@ -1,4 +1,4 @@
-import { Unit } from '../types'
+import { Unit, MediaType } from '../types'
 
 export const isPx = (value: string): boolean => String(value).includes('px')
 
@@ -27,3 +27,5 @@ export const pxToRem = (value: string | number, ratio = 16) =>
   pxToRelativeUnit(value, ratio, 'rem')
 
 export const pxToString = (value: number) => `${value}px`
+
+export const addMediaType = (mediaType: MediaType) => `${mediaType} and`

@@ -11,16 +11,16 @@ describe('library methods(default exported) tests', () => {
 
   describe('Basic usage', () => {
     test('min', () => {
-      expect(mq.min(minPx)).toBe(`@media all (min-width: ${minPx / 16}em)`)
+      expect(mq.min(minPx)).toBe(`@media all and (min-width: ${minPx / 16}em)`)
     })
 
     test('max', () => {
-      expect(mq.max(maxPx)).toBe(`@media all (max-width: ${maxPx / 16}em)`)
+      expect(mq.max(maxPx)).toBe(`@media all and (max-width: ${maxPx / 16}em)`)
     })
 
     test('between', () => {
       expect(mq.between(minPx, maxPx)).toBe(
-        `@media all (min-width: ${minPx / 16}em) and (max-width: ${maxPx /
+        `@media all and (min-width: ${minPx / 16}em) and (max-width: ${maxPx /
           16}em)`
       )
     })
@@ -45,7 +45,7 @@ describe('library methods(default exported) tests', () => {
 
     test(`min with Options`, () => {
       expect(mq.min(minPx, opts)).toBe(
-        `@media ${mediaType} (min-width: ${
+        `@media ${mediaType} and (min-width: ${
           unit !== 'px' ? minPx / unitRatio : minPx
         }${unit})`
       )
@@ -53,7 +53,7 @@ describe('library methods(default exported) tests', () => {
 
     test(`max with Options`, () => {
       expect(mq.max(minPx, opts)).toBe(
-        `@media ${mediaType} (max-width: ${
+        `@media ${mediaType} and (max-width: ${
           unit !== 'px' ? minPx / unitRatio : minPx
         }${unit})`
       )
@@ -61,7 +61,7 @@ describe('library methods(default exported) tests', () => {
 
     test(`between with Options`, () => {
       expect(mq.between(minPx, maxPx, opts)).toBe(
-        `@media ${mediaType} (min-width: ${
+        `@media ${mediaType} and (min-width: ${
           unit !== 'px' ? minPx / unitRatio : minPx
         }${unit}) and (max-width: ${
           unit !== 'px' ? maxPx / unitRatio : maxPx
@@ -76,8 +76,8 @@ describe('Generate media queries', () => {
     small: mq.max(480),
     middle: mq.between(481, 767),
     large: mq.min(768),
-    fhd: `@media screen (min-width: 120em)`,
-    uhd: `@media screen (min-width: 240em)`
+    fhd: `@media screen and (min-width: 120em)`,
+    uhd: `@media screen and (min-width: 240em)`
   }
   const { ...libraryMethods } = mq
 
@@ -87,8 +87,8 @@ describe('Generate media queries', () => {
         small: mq.max(480),
         middle: mq.between(481, 767),
         large: mq.min(768),
-        fhd: `@media screen (min-width: 120em)`,
-        uhd: `@media screen (min-width: 240em)`,
+        fhd: `@media screen and (min-width: 120em)`,
+        uhd: `@media screen and (min-width: 240em)`,
         ...libraryMethods
       })
     )

@@ -1,1 +1,1 @@
-export { pxToEm, pxToRem, pxToString } from './converters'
+export { pxToEm, pxToRem, pxToString, addMediaType } from './converters'

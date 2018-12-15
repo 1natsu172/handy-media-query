@@ -1,5 +1,5 @@
 import { Unit, MediaType } from './types'
-import { pxToEm, pxToRem, pxToString } from './converters'
+import { pxToEm, pxToRem, pxToString, addMediaType } from './converters'
 import { hasDuplicateProps } from './conditionals'
 
 /**
@@ -32,16 +32,15 @@ const convertPoint = (point: Point, unit: Unit, ratio = 16): string => {
 
 const mq = () => {
   const min = (point: Point, opts: Opts = defaultOpts) => {
-    const { mediaType, unit, unitRatio } = opts
-    return `@media ${mediaType} (min-width: ${convertPoint(
+    return `@media ${addMediaType(mediaType)} (min-width: ${convertPoint(
       point,
       unit,
       unitRatio
     )})`
   }
+
   const max = (point: Point, opts: Opts = defaultOpts) => {
-    const { mediaType, unit, unitRatio } = opts
-    return `@media ${mediaType} (max-width: ${convertPoint(
+    return `@media ${addMediaType(mediaType)} (max-width: ${convertPoint(
       point,
       unit,
       unitRatio
@@ -53,8 +52,7 @@ const mq = () => {
     maxPoint: Point,
     opts: Opts = defaultOpts
   ) => {
-    const { mediaType, unit, unitRatio } = opts
-    return `@media ${mediaType} (min-width: ${convertPoint(
+    return `@media ${addMediaType(mediaType)} (min-width: ${convertPoint(
       minPoint,
       unit,
       unitRatio

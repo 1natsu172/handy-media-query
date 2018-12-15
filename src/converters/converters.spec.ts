@@ -1,4 +1,4 @@
-import { pxToEm, pxToRem, pxToString, isPx } from './converters'
+import { pxToEm, pxToRem, pxToString, isPx, addMediaType } from './converters'
 
 describe('isPx testing', () => {
   test('isPx', () => {
@@ -50,5 +50,11 @@ describe('pxToRem', () => {
 describe('pxToString', () => {
   test('when a number comes', () => {
     expect(pxToString(768)).toBe('768px')
+  })
+})
+
+describe('addMediaType', () => {
+  test('when a string comes', () => {
+    expect(addMediaType('all')).toBe('all and')
   })
 })
