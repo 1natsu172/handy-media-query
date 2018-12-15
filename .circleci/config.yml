@@ -3,6 +3,12 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2.1
+
+references:
+  <<: &working_directory
+    working_directory: ~/handy-media-query
+
+
 commands:
   test:
     steps:
@@ -25,24 +31,45 @@ commands:
       - run:
           name: test
           command: yarn test
+  test-node-v9:
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Install dependencies
+          command: yarn install --ignore-engines
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: test
+          command: yarn test
 
 jobs:
   node-v9:
+    <<: *working_directory
     docker:
       - image: circleci/node:9
-    working_directory: ~/handy-media-query
     steps:
-      - test
+      - test-node-v9
   node-v10:
+    <<: *working_directory
     docker:
       - image: circleci/node:10
-    working_directory: ~/handy-media-query
     steps:
       - test
   node-v11:
+    <<: *working_directory
     docker:
       - image: circleci/node:11
-    working_directory: ~/handy-media-query
     steps:
       - test
 
