@@ -1,0 +1,1 @@
+export { maxMediaFeatures } from './maxMediaFeatures'

@@ -1,4 +1,4 @@
-import { Unit, MediaType } from '../types'
+import { Unit, MediaType, Point } from '../../../types'
 
 export const isPx = (value: string): boolean => String(value).includes('px')
 
@@ -29,3 +29,16 @@ export const pxToRem = (value: string | number, ratio = 16) =>
 export const pxToString = (value: number) => `${value}px`
 
 export const addMediaType = (mediaType: MediaType) => `${mediaType} and`
+
+export const convertPx = (point: Point, unit: Unit, ratio = 16): string => {
+  if (unit === 'rem') {
+    return pxToRem(point, ratio)
+  }
+  if (unit === 'em') {
+    return pxToEm(point, ratio)
+  }
+
+  if (unit === 'px' && typeof point === 'number') return pxToString(point)
+
+  return point as string
+}

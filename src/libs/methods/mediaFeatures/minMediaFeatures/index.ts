@@ -1,0 +1,1 @@
+export { minMediaFeatures } from './minMediaFeatures'

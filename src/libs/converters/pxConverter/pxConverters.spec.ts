@@ -1,4 +1,4 @@
-import { pxToEm, pxToRem, pxToString, isPx, addMediaType } from './converters'
+import { pxToEm, pxToRem, pxToString, isPx, addMediaType } from '.'
 
 describe('isPx testing', () => {
   test('isPx', () => {
