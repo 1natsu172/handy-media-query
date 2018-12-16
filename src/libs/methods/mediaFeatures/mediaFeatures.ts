@@ -1,15 +1,18 @@
-import { Point, Prefix, MediaType, Unit } from '../../../types'
+import { Unit } from './../../../types/Units'
+import { MediaType } from './../../../types/MediaType'
+import { MediaFeaturePrefix } from './../../../types/MediaFeatures'
+import { PxValue } from './../../../types/Values'
 import { addMediaType, convertPx } from '../../converters'
 
 const defaultOpts = {
   unit: 'em' as Unit,
   unitRatio: 16,
   mediaType: 'all' as MediaType,
-  prefix: '' as Prefix
+  prefix: '' as MediaFeaturePrefix
 }
 type Opts = typeof defaultOpts
 
-export const width = (point: Point, opts: Opts = defaultOpts) => {
+export const width = (point: PxValue, opts: Opts = defaultOpts) => {
   const { mediaType, unit, unitRatio, prefix } = { ...defaultOpts, ...opts }
   return `@media ${addMediaType(mediaType)} (${prefix}width: ${convertPx(
     point,
@@ -18,7 +21,7 @@ export const width = (point: Point, opts: Opts = defaultOpts) => {
   )})`
 }
 
-export const height = (point: Point, opts: Opts = defaultOpts) => {
+export const height = (point: PxValue, opts: Opts = defaultOpts) => {
   const { mediaType, unit, unitRatio, prefix } = { ...defaultOpts, ...opts }
   return `@media ${addMediaType(mediaType)} (${prefix}height: ${convertPx(
     point,
