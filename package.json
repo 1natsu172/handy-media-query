@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "@types/ramda": "^0.25.44",
     "husky": "^1.2.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
@@ -75,5 +76,8 @@
     "emotion",
     "styled-components",
     "css-in-js"
-  ]
+  ],
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
 }
