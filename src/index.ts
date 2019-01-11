@@ -9,7 +9,7 @@ import { hasDuplicateProps } from './conditionals'
 type Point = string | number
 
 type UserSelfMq<T> = T
-type Opts = typeof defaultOpts
+type Opts = Partial<typeof defaultOpts>
 
 const defaultOpts = {
   unit: 'em' as Unit,
